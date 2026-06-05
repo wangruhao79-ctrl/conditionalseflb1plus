@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conditionals Practice B1+</title>
+<style>
+body{font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#74ebd5,#9face6);margin:0;padding:20px}
+.container{max-width:1100px;margin:auto;background:#fff;padding:30px;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,.2)}
+h1{text-align:center}
+.exercise{background:#f8f9ff;border-left:8px solid #6c63ff;padding:20px;margin:20px 0;border-radius:12px}
+input[type=text]{padding:8px;width:220px}
+.correct{background:#d4edda}.incorrect{background:#f8d7da}
+button{padding:15px 25px;background:#6c63ff;color:white;border:none;border-radius:10px;font-size:18px}
+#score{font-size:28px;font-weight:bold;text-align:center;margin:20px}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>🌟 Conditionals Practice (Zero, First, Second, Third & Mixed) 🌟</h1>
+
+<div id="score">Score: 0</div>
+
+<div class="exercise">
+<h2>Exercise 1: Identify the Type</h2>
+<p>1. If water reaches 100°C, it boils. <input id="q1"></p>
+<p>2. If it rains tomorrow, we will stay home. <input id="q2"></p>
+<p>3. If I were rich, I would travel the world. <input id="q3"></p>
+<p>4. If she had studied harder, she would have passed. <input id="q4"></p>
+<p>5. If I had gone to bed earlier, I wouldn't feel tired now. <input id="q5"></p>
+</div>
+
+<div class="exercise">
+<h2>Exercise 2: Complete the Sentences</h2>
+<p>6. If water _____ (freeze), it becomes ice. <input id="q6"></p>
+<p>7. If I see Anna tomorrow, I _____ her. <input id="q7"></p>
+<p>8. If I had more money, I _____ a new laptop. <input id="q8"></p>
+<p>9. If they had left earlier, they _____ the train. <input id="q9"></p>
+<p>10. If I had studied medicine, I _____ a doctor now. <input id="q10"></p>
+</div>
+
+<div class="exercise">
+<h2>Exercise 3: Multiple Choice</h2>
+<p>11. If I ___ enough time, I would learn Spanish.<br>
+<input type="radio" name="q11" value="a">have
+<input type="radio" name="q11" value="b">had
+<input type="radio" name="q11" value="c">will have</p>
+
+<p>12. If it ___ tomorrow, we will cancel the picnic.<br>
+<input type="radio" name="q12" value="a">rains
+<input type="radio" name="q12" value="b">rained
+<input type="radio" name="q12" value="c">had rained</p>
+</div>
+
+<div class="exercise">
+<h2>Exercise 4: Error Correction</h2>
+<p>13. If I will see Tom, I will tell him.<br><input id="q13" style="width:500px"></p>
+<p>14. If I was rich, I would buy a yacht.<br><input id="q14" style="width:500px"></p>
+<p>15. If she had studied, she would pass the exam.<br><input id="q15" style="width:500px"></p>
+</div>
+
+<div class="exercise">
+<h2>🗣️ Exercise 5: Speaking Practice</h2>
+<ol>
+<li>What will you do if it rains this weekend?</li>
+<li>If you could travel anywhere in the world, where would you go and why?</li>
+<li>What would you do if you won one million dollars?</li>
+<li>If you had studied a different major, what job would you have now?</li>
+<li>What would you have done differently if you had failed an important exam?</li>
+<li>What happens if people don't get enough sleep?</li>
+<li>What would happen if everyone stopped using smartphones?</li>
+<li>If you could change one thing about your hometown, what would it be?</li>
+<li>If you become fluent in English, how will your life change?</li>
+<li>If you had the chance to meet any famous person, who would it be and why?</li>
+</ol>
+<h3>Follow-up Questions</h3>
+<ul>
+<li>Can you explain your answer?</li>
+<li>Can you give an example?</li>
+<li>What are the advantages and disadvantages?</li>
+<li>Do you think everyone would agree with you?</li>
+<li>How would your family or friends react?</li>
+</ul>
+</div>
+
+<center><button onclick="checkAnswers()">Check Answers</button></center>
+
+<script>
+function checkAnswers(){
+let score=0;
+const ans={q1:"zero",q2:"first",q3:"second",q4:"third",q5:"mixed",q6:"freezes",q7:"will tell",q8:"would buy",q9:"would have caught",q10:"would be"};
+for(let k in ans){
+ let e=document.getElementById(k);
+ if(e.value.trim().toLowerCase()==ans[k]){score++;e.className="correct";}
+ else{e.className="incorrect";}
+}
+if(document.querySelector('input[name=q11]:checked')?.value=="b")score++;
+if(document.querySelector('input[name=q12]:checked')?.value=="a")score++;
+document.getElementById("score").innerHTML="🎯 Score: "+score+" / 12";
+}
+</script>
+</div>
+</body>
+</html>
